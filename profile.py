@@ -45,8 +45,8 @@ def configure_node(request, name, script):
     bs.placement = "any"
     node.addService(rspec.Execute(shell="bash", command="/local/repository/{}".format(script)))
 
-configure_node(request, "enb", "/local/repository/enb_startup.sh")
-configure_node(request, "ue", "/local/repository/ue_startup.sh")
+configure_node(request, "enb", "enb_startup.sh")
+configure_node(request, "ue", "ue_startup.sh")
 
 
 tour = IG.Tour()
