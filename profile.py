@@ -22,9 +22,8 @@ class GLOBALS(object):
 
 
 pc = portal.Context()
-pc.defineParameter("hardware_type", "node hardware type", portal.ParameterType.STRING,
-                   "", longDescription="An optional hardware type for the host node.",
-                   advanced=True)
+pc.defineParameter("hardware_type", "Node Hardware Type", portal.ParameterType.STRING,
+                   "", longDescription="An optional hardware type for the host node.")
 
 params = pc.bindParameters()
 pc.verifyParameters()
@@ -38,7 +37,6 @@ def configure_node(request, name, script):
     node = request.RawPC(name)
     if params.hardware_type:
         node.hardware_type = params.hardware_type
-    node.component_manager_id = "urn:publicid:IDN+emulab.net+authority+cm"
     node.disk_image = GLOBALS.HOST_IMG
     node.addService(rspec.Execute(shell="bash", command="/local/repository/{}".format(script)))
     node_iface = node.addInterface("eth1")
