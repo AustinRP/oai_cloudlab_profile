@@ -1,4 +1,9 @@
 #!/bin/bash
 
-echo test > /tmp/test.txt
-echo test > /local/repository/test.txt
+if [ -d "/mydata" ]; then
+  echo "Found /mydata" > /tmp/startup_log
+  ls -hal /mydata > /tmp/startup_log
+else
+  echo "Could not find /mydata" > /tmp/startup_log
+fi
+
