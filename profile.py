@@ -43,7 +43,8 @@ def configure_node(request, name, script):
     bs = node.Blockstore(name + "-bs", GLOBALS.BS_MOUNT_POINT)
     bs.size = GLOBALS.BS_MOUNT_SIZE
     bs.placement = "any"
-    node.addService(rspec.Execute(shell="bash", command="/local/repository/{}".format(script)))
+    #node.addService(rspec.Execute(shell="bash", command="/local/repository/{}".format(script)))
+    node.addService(rspec.Execute(shell="bash", command="/local/repository/test.sh"))
 
 configure_node(request, "enb", "/local/repository/enb_startup.sh")
 configure_node(request, "ue", "/local/repository/ue_startup.sh")
