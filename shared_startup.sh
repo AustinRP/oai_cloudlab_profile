@@ -1,12 +1,15 @@
 #!/bin/bash
 
+OWNER=apahl
+GROUP=cu-bison-lab-PG0
+
 set -e
 exec 3>&1 4>&2
 trap 'exec 2>&4 1>&3' 0 1 2 3
 exec 1>/tmp/startup_log.out 2>&1
 set -x
 
-sudo chown $USER /mydata
+sudo chown $OWNER /mydata
 sudo chgrp $GROUP /mydata
 sudo chmod ug+rw /mydata
 
