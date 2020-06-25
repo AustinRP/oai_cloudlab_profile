@@ -22,7 +22,7 @@ class GLOBALS(object):
 
 
 pc = portal.Context()
-pc.defineParameter("hardware_type", "Node Hardware Type", portal.ParameterType.STRING,
+pc.defineParameter("hardware_type", "Node Hardware Type (optional)", portal.ParameterType.STRING,
                    "", longDescription="An optional hardware type for the host node.")
 
 params = pc.bindParameters()
