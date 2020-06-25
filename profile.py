@@ -10,7 +10,7 @@ TODO: Tour Description here
 """
 
 tourInstructions = """
-TODO: Tour Instructions here
+Follow instructions [here](https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/doc/L2NFAPI_NOS1.md), starting from Step 6 (Start the eNB). 
 """
 
 
